@@ -5,12 +5,12 @@ import edu.wpi.first.math.util.Units;
 
 public final class Constants {
     public static final class Drivetrain{
-        public static final int kLFMotorID = 0;
+        public static final int kLFMotorID = 6;
         public static final int kRFMotorID = 1;
-        public static final int kLBMotorID = 2;
-        public static final int kRBMotorID = 3;
+        public static final int kLBMotorID = 9;
+        public static final int kRBMotorID = 2;
 
-        public static final double kTrackwidthMeters = 0.69;
+        public static final double kTrackwidthMeters = Units.inchesToMeters(18);
 	    public static final double kWheelDiameterMeters = Units.inchesToMeters(6);
         public static final DifferentialDriveKinematics kDriveKinematics = new DifferentialDriveKinematics(
 			kTrackwidthMeters);
