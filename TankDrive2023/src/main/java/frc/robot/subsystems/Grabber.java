@@ -10,10 +10,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Grabber extends SubsystemBase
 {
     Compressor comp = new Compressor(PneumaticsModuleType.CTREPCM);
-    DoubleSolenoid ds = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
+    DoubleSolenoid ds;
     public Grabber()
     {
-        ds.set(Value.kReverse);    
+        ds = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
+        ds.set(Value.kForward);
+        comp.enableDigital();    
     }
     
     public void togglePneumatics()
@@ -21,14 +23,16 @@ public class Grabber extends SubsystemBase
         ds.toggle();   
     }
 
-    public void grabGamePiece()
+    public void disable()
     {
-        ds.set(Value.kForward);
+        ds.set(Value.kOff);
+        comp.disable();
     }
 
-    public void releaseGamePiece()
+    public void enable(DoubleSolenoid.Value value)
     {
-        ds.set(Value.kReverse);
+        ds.set(value);
+        comp.enableDigital();
     }
 
     @Override
