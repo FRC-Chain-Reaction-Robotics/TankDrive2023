@@ -4,7 +4,13 @@ import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.math.util.Units;
 
 public final class Constants {
+    public static final class Elevator
+    {
+        public static final int kLeftElevatorMotor = 3;
+        public static final int kRightElevatorMotor = 4;
+    }
     public static final class Drivetrain{
+
         public static final int kLFMotorID = 9;
         public static final int kRFMotorID = 1;
         public static final int kLBMotorID = 6;
