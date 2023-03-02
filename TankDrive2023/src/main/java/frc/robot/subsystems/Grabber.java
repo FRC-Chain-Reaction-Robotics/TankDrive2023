@@ -39,7 +39,13 @@ public class Grabber extends SubsystemBase
     public void periodic()
     {
         SmartDashboard.putBoolean("Pressure", comp.getPressureSwitchValue());
+        SmartDashboard.putString("Solenoid Direction", getSolenoidValue());
     }
 
-    
+    private String getSolenoidValue()
+    {
+        if (ds.get().equals(Value.kForward))
+            return "Forward";
+        return "Reverse";
+    }
 }

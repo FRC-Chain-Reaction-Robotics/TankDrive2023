@@ -11,10 +11,10 @@ public final class Constants {
     }
     public static final class Drivetrain{
 
-        public static final int kLFMotorID = 9;
-        public static final int kRFMotorID = 1;
-        public static final int kLBMotorID = 6;
-        public static final int kRBMotorID = 2;
+        public static final int kLFMotorID = 10;
+        public static final int kRFMotorID = 7;
+        public static final int kLBMotorID = 8;
+        public static final int kRBMotorID = 3;
 
         public static final double kTrackwidthMeters = Units.inchesToMeters(18);
 	    public static final double kWheelDiameterMeters = Units.inchesToMeters(6);
