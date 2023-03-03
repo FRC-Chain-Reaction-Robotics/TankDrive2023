@@ -30,7 +30,10 @@ public final class Constants {
         public static final double kvVoltSecondsPerMeter = 0;
         public static final double kaVoltSecondsSquaredPerMeter = 0;
         public static final double kPDriveVel = 0;
-        public static final double DTD_KP = 1;
-        public static final double DTD_TOLERANCE = 0;
+        public static final double DTD_KP = 1.5;
+        public static final double DTD_TOLERANCE = 0.1;
+
+        public static final double kMaxSpeedMetersPerSecond = 1.0;
+        public static final double kMaxAccelMetersPerSecondSquared = 1.0;
     }
 }

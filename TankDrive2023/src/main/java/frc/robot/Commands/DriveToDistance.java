@@ -20,4 +20,17 @@ public class DriveToDistance extends PIDCommand{
         
         this.dt = dt;
     }
+
+    
+    @Override
+    public boolean isFinished()
+    {
+        return getController().atSetpoint();    //  This command will terminate once the desired distance has been reached.
+    }
+    
+    @Override
+    public void end(boolean interrupted) {
+        dt.arcadeDrive(0, 0);
+        
+    }
 }

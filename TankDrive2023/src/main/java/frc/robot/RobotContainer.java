@@ -6,13 +6,14 @@ import edu.wpi.first.wpilibj.smartdashboard.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.*;
 import edu.wpi.first.wpilibj2.command.button.*;
-import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.Commands.DriveToDistance;
+import frc.robot.Commands.UltimateAutonomousCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.Grabber;
 
 public class RobotContainer {
+    private final SendableChooser<Command> chooser = new SendableChooser<Command>();
     private final Drivetrain dt = new Drivetrain();
     private Elevator elevate = new Elevator();
     private Grabber grabber = new Grabber();
@@ -22,6 +23,10 @@ public class RobotContainer {
 
     public RobotContainer()
     {
+        SendableChooser<Boolean> option = new SendableChooser<Boolean>();
+        option.addOption("in front of charging station", true);
+        option.addOption("not in front of charging station", false);
+
         dt.setDefaultCommand(new RunCommand(() -> dt.arcadeDrive(-driverController.getLeftY(),
         -driverController.getRightX()), dt));
 
@@ -29,8 +34,23 @@ public class RobotContainer {
         .onFalse(new InstantCommand(() -> dt.setOutput(1), dt));
 
         elevate.setDefaultCommand(new RunCommand(() -> elevate.motorsOff(), elevate));
-
         
+        configureButtonBindings();
+        
+        chooser.setDefaultOption("Drive To Distance", new DriveToDistance(1, dt));
+        //chooser.addOption("Turn To Angle", new TurnToAngleCommand(90, dt));
+
+        chooser.addOption("SetWheelSpeeds", new RunCommand(() -> dt.setWheelSpeeds(1, 1), dt));
+        chooser.addOption("AutonCommand", new UltimateAutonomousCommand(dt, option.getSelected()));
+
+        SmartDashboard.putData(chooser);
+        
+        
+    }
+
+    public Command getAutonomousCommand()
+    {
+        return chooser.getSelected();
     }
     
     private void configureButtonBindings()
