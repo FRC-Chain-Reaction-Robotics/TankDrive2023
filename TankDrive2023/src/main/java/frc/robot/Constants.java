@@ -6,8 +6,8 @@ import edu.wpi.first.math.util.Units;
 public final class Constants {
     public static final class Elevator
     {
-        public static final int kLeftElevatorMotor = 6;
-        public static final int kRightElevatorMotor = 2;
+        public static final int kLeftElevatorMotor = 2;
+        public static final int kRightElevatorMotor = 6;
     }
     public static final class Drivetrain{
 

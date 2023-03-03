@@ -13,7 +13,7 @@ public class Grabber extends SubsystemBase
     DoubleSolenoid ds;
     public Grabber()
     {
-        ds = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
+        ds = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 2, 3);
         ds.set(Value.kForward);
         comp.enableDigital();    
     }

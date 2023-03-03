@@ -8,7 +8,7 @@ import frc.robot.subsystems.Drivetrain;
 public class UltimateAutonomousCommand extends SequentialCommandGroup 
 {
     SendableChooser<Boolean> option;
-    public UltimateAutonomousCommand(Drivetrain dt, Boolean inFrontOfChargingStation)
+    public UltimateAutonomousCommand(Drivetrain dt, boolean inFrontOfChargingStation)
     {
 
         if (inFrontOfChargingStation)

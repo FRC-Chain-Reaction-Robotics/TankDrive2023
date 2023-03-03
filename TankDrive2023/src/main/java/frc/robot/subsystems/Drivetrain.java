@@ -65,10 +65,10 @@ public class Drivetrain extends SubsystemBase{
 		rbEncoder.setPosition(0);
 		
 
-		leftFront.setIdleMode(IdleMode.kCoast);
-		rightFront.setIdleMode(IdleMode.kCoast);
-		leftBack.setIdleMode(IdleMode.kCoast);
-		rightBack.setIdleMode(IdleMode.kCoast);
+		leftFront.setIdleMode(IdleMode.kBrake);
+		rightFront.setIdleMode(IdleMode.kBrake);
+		leftBack.setIdleMode(IdleMode.kBrake);
+		rightBack.setIdleMode(IdleMode.kBrake);
 			
 		leftFront.setSmartCurrentLimit(Constants.Drivetrain.kGoodStallCurrentLimit, Constants.Drivetrain.kGoodFreeCurrentLimit);
 		rightFront.setSmartCurrentLimit(Constants.Drivetrain.kGoodStallCurrentLimit, Constants.Drivetrain.kGoodFreeCurrentLimit);

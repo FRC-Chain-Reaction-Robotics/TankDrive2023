@@ -25,8 +25,8 @@ public class Elevator extends SubsystemBase{
         leftLiftMotor.setIdleMode(IdleMode.kBrake);
         rightLiftMotor.setIdleMode(IdleMode.kBrake);
 
-        leftLiftMotor.setInverted(true);
-        rightLiftMotor.setInverted(false);
+        leftLiftMotor.setInverted(false);
+        rightLiftMotor.setInverted(true);
 
         // elevatorTab = Shuffleboard.getTab("Elevator");
         
