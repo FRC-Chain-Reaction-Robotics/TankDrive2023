@@ -131,7 +131,7 @@ public class Drivetrain extends SubsystemBase{
 	{
 		// This method will be called once per scheduler run'
 
-		/*
+		
 		SmartDashboard.putNumber("lTicks", lfEncoder.getPosition());
 		SmartDashboard.putNumber("rTicks", rfEncoder.getPosition());
 		// Print out the odometry to smartdashboard
@@ -145,7 +145,7 @@ public class Drivetrain extends SubsystemBase{
 		SmartDashboard.putNumber("right speeds", getWheelSpeeds().rightMetersPerSecond);
 		field.setRobotPose(getPose());
 		odometry.update(gyro.getRotation2d(), lfEncoder.getPosition(), rfEncoder.getPosition());
-		*/
+		
 	}
 
 	public DifferentialDriveWheelSpeeds getWheelSpeeds()

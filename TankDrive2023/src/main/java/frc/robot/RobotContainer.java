@@ -23,7 +23,7 @@ public class RobotContainer {
     public RobotContainer()
     {
         dt.setDefaultCommand(new RunCommand(() -> dt.arcadeDrive(-driverController.getLeftY(),
-        driverController.getRightX()), dt));
+        -driverController.getRightX()), dt));
 
         driverController.rightBumper().onTrue(new InstantCommand(dt::slowMode, dt))
         .onFalse(new InstantCommand(() -> dt.setOutput(1), dt));

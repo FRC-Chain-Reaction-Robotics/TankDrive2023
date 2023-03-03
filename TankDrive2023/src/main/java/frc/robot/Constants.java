@@ -6,8 +6,8 @@ import edu.wpi.first.math.util.Units;
 public final class Constants {
     public static final class Elevator
     {
-        public static final int kLeftElevatorMotor = 3;
-        public static final int kRightElevatorMotor = 4;
+        public static final int kLeftElevatorMotor = 6;
+        public static final int kRightElevatorMotor = 2;
     }
     public static final class Drivetrain{
 
@@ -30,5 +30,7 @@ public final class Constants {
         public static final double kvVoltSecondsPerMeter = 0;
         public static final double kaVoltSecondsSquaredPerMeter = 0;
         public static final double kPDriveVel = 0;
+        public static final double DTD_KP = 1;
+        public static final double DTD_TOLERANCE = 0;
     }
 }
