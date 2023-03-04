@@ -65,10 +65,7 @@ public class Drivetrain extends SubsystemBase{
 		rbEncoder.setPosition(0);
 		
 
-		leftFront.setIdleMode(IdleMode.kBrake);
-		rightFront.setIdleMode(IdleMode.kBrake);
-		leftBack.setIdleMode(IdleMode.kBrake);
-		rightBack.setIdleMode(IdleMode.kBrake);
+		goodMode();
 			
 		leftFront.setSmartCurrentLimit(Constants.Drivetrain.kGoodStallCurrentLimit, Constants.Drivetrain.kGoodFreeCurrentLimit);
 		rightFront.setSmartCurrentLimit(Constants.Drivetrain.kGoodStallCurrentLimit, Constants.Drivetrain.kGoodFreeCurrentLimit);
@@ -187,10 +184,7 @@ public class Drivetrain extends SubsystemBase{
 
 	public void evilMode()
 	{
-		leftFront.setIdleMode(IdleMode.kBrake);
-		leftBack.setIdleMode(IdleMode.kBrake);
-		rightFront.setIdleMode(IdleMode.kBrake);
-		rightBack.setIdleMode(IdleMode.kBrake);
+		
 		leftFront.setSmartCurrentLimit(Constants.Drivetrain.kEvilStallCurrentLimit, Constants.Drivetrain.kEvilFreeCurrentLimit);
 		rightFront.setSmartCurrentLimit(Constants.Drivetrain.kEvilStallCurrentLimit, Constants.Drivetrain.kEvilFreeCurrentLimit);
 		leftBack.setSmartCurrentLimit(Constants.Drivetrain.kEvilStallCurrentLimit, Constants.Drivetrain.kEvilFreeCurrentLimit);
@@ -200,10 +194,6 @@ public class Drivetrain extends SubsystemBase{
 
 	public void goodMode()
 	{
-		leftFront.setIdleMode(IdleMode.kCoast);
-		leftBack.setIdleMode(IdleMode.kCoast);
-		rightFront.setIdleMode(IdleMode.kCoast);
-		rightBack.setIdleMode(IdleMode.kCoast);	
 		
 		leftFront.setSmartCurrentLimit(Constants.Drivetrain.kGoodStallCurrentLimit, Constants.Drivetrain.kGoodFreeCurrentLimit);
 		rightFront.setSmartCurrentLimit(Constants.Drivetrain.kGoodStallCurrentLimit, Constants.Drivetrain.kGoodFreeCurrentLimit);

@@ -15,7 +15,7 @@ public class Grabber extends SubsystemBase
     {
         ds = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 2, 3);
         ds.set(Value.kForward);
-        comp.enableDigital();    
+        comp.disable();    
     }
     
     public void togglePneumatics()
